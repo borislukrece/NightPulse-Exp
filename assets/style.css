@@ -50,15 +50,15 @@ main {
 }
 
 .back {
-    background-image: url("/assets/groupshadow.png");
+    background-image: url("../assets/groupshadow.png");
 }
 
 .back-shadow {
-    background-image: url("/assets/shadow-image.png");
+    background-image: url("../assets/shadow-image.png");
 }
 
 .custom-cursor {
-    cursor: url(/assets/cur111.cur) 2 2, pointer;
+    cursor: url("../assets/cur111.cur") 2 2, pointer;
 }
 
 .dimensions-transition {
