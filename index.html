@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NightPulse</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script defer src="assets/alpinejs.min.js"></script>
+    </head>
+
+    <body class="transition duration-150">
+        <main class="w-full">
+            <div
+                class="w-full h-auto lg:h-screen px-4 py-4 flex items-center justify-center">
+                <div
+                    class="max-w-5xl w-full h-auto lg:min-h-[95%] lg:h-full mx-auto shadow-lg rounded-xl lg:rounded-[28.4954px]">
+                    <div
+                        class="w-full h-full flex flex-col px-4 lg:px-10 py-4 transition duration-150 rounded-xl lg:rounded-[28.4954px] back">
+                        <header class="w-full py-4">
+                            <nav
+                                class="header-nav hidden lg:flex gap-3 items-center justify-between">
+                                <div
+                                    class="flex gap-2 items-center justy-center text-sm">
+                                    <a href>Join the team</a>
+                                    <a href>Contact us</a>
+                                </div>
+                                <img src="assets/logo.png" alt="Logo"
+                                    class="w-16 h-16 object-contain">
+                                <div
+                                    class="flex gap-4 items-center justy-center text-sm">
+                                    <div
+                                        class="flex gap-2 items-center justy-center">
+                                        <a href>Previous Campaign</a>
+                                        <a href>All Games List</a>
+                                    </div>
+                                    <button type="button" class="toggle-theme">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16"
+                                            fill="currentColor"
+                                            class="bi bi-moon-stars-fill"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                                            <path
+                                                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </nav>
+
+                            <div
+                                class="w-full flex lg:hidden items-center justify-between">
+                                <div>
+                                    <img src="assets/logo.png" alt="Logo"
+                                        class="w-16 h-16 object-contain">
+                                </div>
+                                <div>
+                                    <div x-data="{ isActive: false }"
+                                        class="relative z-[999999]">
+                                        <div
+                                            class="inline-flex items-center overflow-hidden rounded-md bg-slate-100/[0.2]">
+                                            <button
+                                                x-on:click="isActive = !isActive"
+                                                class="h-full p-2 text-white">
+                                                <span
+                                                    class="sr-only">Menu</span>
+                                                <svg class="w-6 h-6"
+                                                    fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 512 512"><path
+                                                        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" /></svg>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="absolute end-0 z-[999999] mt-2 w-56 rounded-md ring ring-gray-100 bg-black/[0.3] backdrop-blur shadow-lg"
+                                            x-cloak
+                                            x-transition
+                                            x-show="isActive"
+                                            x-on:click.away="isActive = false"
+                                            x-on:keydown.escape.window="isActive = false"
+                                            style="display: none;">
+                                            <div class="p-2">
+                                                <nav
+                                                    class="w-full">
+                                                    <div
+                                                        class="flex flex-col gap-2 items-center justy-center text-sm">
+                                                        <a href>Join the
+                                                            team</a>
+                                                        <a href>Contact us</a>
+                                                    </div>
+                                                    <img src="assets/logo.png"
+                                                        alt="Logo"
+                                                        class="w-16 h-16 object-contain mx-auto">
+                                                    <div
+                                                        class="flex flex-col gap-2 items-center justy-center text-sm">
+                                                        <a href>Previous
+                                                            Campaign</a>
+                                                        <a href>All Games
+                                                            List</a>
+                                                        <button type="button"
+                                                            class="toggle-theme">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                fill="currentColor"
+                                                                class="bi bi-moon-stars-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                                                                <path
+                                                                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+
+                        <div
+                            class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-2">
+                            <div class="w-full h-full">
+                                <div class="w-full h-full flex flex-col gap-2">
+                                    <div class="flex">
+                                        <div
+                                            class="bg-[#f53fa10d] text-[var(--theme)] text-sm font-semibold px-2 py-1 rounded-md">
+                                            Gaming Club 2.0 Release
+                                        </div>
+                                    </div>
+
+                                    <div class="w-full flex-1">
+                                        <div class="w-full my-4">
+                                            <div class="text-4xl font-bold">
+                                                <p>Have you ever tried Night
+                                                    Blodthirster</p>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="w-full px-2 py-2 bg-[#f53fa10d] rounded-lg">
+                                            <div
+                                                class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <a href class="w-full h-full">
+                                                    <div
+                                                        class="w-full h-full flex items-center gap-2 custom-cursor">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[var(--theme)] text-white rounded-md">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                fill="currentColor"
+                                                                class="bi bi-pin-angle-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z" />
+                                                            </svg>
+                                                        </div>
+                                                        <div
+                                                            class="line-clamp-2 text-sm text-[var(--link-hover)]">
+                                                            <span>2 Months Trip
+                                                                to
+                                                                Swiss</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href
+                                                    class="w-full h-full">
+                                                    <div
+                                                        class="w-full h-full flex items-center gap-2 custom-cursor">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[var(--theme)] text-white rounded-md">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                fill="currentColor"
+                                                                class="bi bi-people-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                                                            </svg>
+                                                        </div>
+                                                        <div
+                                                            class="line-clamp-2 text-sm text-[var(--link-hover)]">
+                                                            <span>+20,000
+                                                                Attendees</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href
+                                                    class="w-full h-full">
+                                                    <div
+                                                        class="w-full h-full flex items-center gap-2 custom-cursor">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[var(--theme)] text-white rounded-md">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                fill="currentColor"
+                                                                class="bi bi-joystick"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z" />
+                                                                <path
+                                                                    d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z" />
+                                                            </svg>
+                                                        </div>
+                                                        <div
+                                                            class="line-clamp-2 text-sm text-[var(--link-hover)]">
+                                                            <span>6 Hrs
+                                                                Coaching/day</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href
+                                                    class="w-full h-full">
+                                                    <div
+                                                        class="w-full h-full flex items-center gap-2 custom-cursor">
+                                                        <div
+                                                            class="w-10 h-10 flex items-center justify-center bg-[var(--theme)] text-white rounded-md">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="16"
+                                                                height="16"
+                                                                fill="currentColor"
+                                                                class="bi bi-ticket-perforated-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6V4.5Zm4-1v1h1v-1H4Zm1 3v-1H4v1h1Zm7 0v-1h-1v1h1Zm-1-2h1v-1h-1v1Zm-6 3H4v1h1v-1Zm7 1v-1h-1v1h1Zm-7 1H4v1h1v-1Zm7 1v-1h-1v1h1Zm-8 1v1h1v-1H4Zm7 1h1v-1h-1v1Z" />
+                                                            </svg>
+                                                        </div>
+                                                        <div
+                                                            class="line-clamp-2 text-sm text-[var(--link-hover)]">
+                                                            <span>Many
+                                                                Suprises!</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <a href class="w-full">
+                                            <div
+                                                class="w-full px-2 py-2 font-semibold rounded-md bg-[#f53fa10d] text-[var(--foreground)] text-sm custom-cursor">
+                                                JOIN GAMING!
+                                            </div>
+                                        </a>
+                                        <a href class="w-full">
+                                            <div
+                                                class="w-full px-2 py-2 font-semibold rounded-md bg-[#f53fa10d] text-[var(--foreground)] text-sm custom-cursor">
+                                                SEE ALL GAMES
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="w-full h-full overflow-hidden">
+                                <div
+                                    class="w-full h-full flew items-center justify-center back-shadow bg-cover overflow-hidden rounded-tl-[10rem] rounded-br-[10rem] rounded-tr-[5rem] rounded-bl-[5rem]">
+                                    <img src="assets/women.png" alt="Women"
+                                        srcset="assets/women.png"
+                                        class="w-[80%] h-full hover:h-[102%] object-cover custom-cursor dimensions-transition">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="loader-container">
+            <div class="loader-content back">
+                <div>
+                    <div class="loader-logo">
+                        <div class="logo-img">
+                            <img src="assets/logo.png" width="40"
+                                height="40" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="flex-element">
+                        <span class="loader"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="assets/jquery-3.7.1.min.js"></script>
+        <script src="assets/main.js"></script>
+    </body>
+
+</html>
